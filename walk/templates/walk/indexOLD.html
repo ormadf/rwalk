@@ -1,0 +1,24 @@
+<!-- return image of walk: we need to imbed image file here
+ or maybe to compute 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %}{% endblock %}</title>
+
+</head>
+<body>
+<a href="{% url 'walk:steps' %}"> link to steps </a>
+<div id="content">
+{% block content %}
+
+{% endblock %}
+</div>
+
+<div id="sidebar">
+<h2>random walk {{curent_name}}</h2>
+<p>This is modeling of non-returning random walk.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends "walk/base.html" %}
+
+{% block content %}
+<h2> {{num_steps}} </h2>
+
+<div id="chart">
+  <!-- Don't forget the "|safe!" -->  
+  <embed type="image/svg+xml" src={{ chart|safe }} width="300px" /></p>    
+</div>
+{% endblock content %}

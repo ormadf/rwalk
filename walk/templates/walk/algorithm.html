@@ -1,0 +1,33 @@
+{% extends "walk/base.html" %}
+
+{% block header %}
+  <h2> {{ algorithm }}</h2>
+ {%endblock header %} 
+ 
+{% block content %}
+
+<p>
+  <a href="{% url 'walk:new_comment' algorithm.id  %}"> add new comment </a>
+</p>
+<ul>
+  {% for comment in comments %}
+    <div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3>
+          {{ comment.date_added|date:'M d, Y H:i'}}
+		  <small>
+		     <a href="{%  url 'walk:edit_comment' comment.id %}"> edit comment </a>
+		  </small>
+		</h3>
+      </div>
+      <div class="panel-body">
+	  {{ comment.text|linebreaks}}
+	  </div>
+	</div>  <!-- panel -->
+	
+  {% empty%}
+      There are no comments for this algorithm	
+  {% endfor %}
+</ul>
+
+{% endblock content %}  

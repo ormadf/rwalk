@@ -1,0 +1,14 @@
+{% extends "walk/base.html" %}
+ {% block content %}  
+  <form action= "{% url 'walk:self_avoid_walk' %}" method = 'post' >
+    {% csrf_token %}
+	{{form}}
+    <input type="submit" value="Submit" />	    
+  </form>
+</div>
+<h2> {{steps}}</h2>
+<div id="sidebar">
+<h2>self-avoiding random walk {{curent_name}}</h2>
+<p>This is modeling of self-avoiding random walk.</p>
+
+{% endblock content %}

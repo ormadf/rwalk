@@ -1,0 +1,13 @@
+{% extends "walk/base.html" %}
+
+{% block content %}
+
+  <p> <a href="{% url 'walk:algorithm' algorithm.id %}"> {{algorithm}} </a> </p>
+  <p> Add new comment: </p>
+  
+  <form action="{% url 'walk:new_comment' algorithm.id %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit"> add comment </button>	
+  </form>  
+{% endblock content%}  

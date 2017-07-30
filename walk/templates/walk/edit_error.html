@@ -1,0 +1,18 @@
+{% extends "walk/base.html" %}
+
+{% block header %}
+  <div class='jumbotron'>
+    <h1> Random Walk Simulation : Error - algorithm is not yours </h1>
+{% endblock header %}
+{% block content %}
+<p>
+<a href="{% url 'walk:nr_rand_walk' %}"><h3> link to non-returning random walk simulation</h3> </a> 
+</p>
+<p>
+<a href="{% url 'walk:self_avoid_walk' %}"><h3> link to self-avoiding walk simulation</h3> </a>
+</p>
+<br>
+<h4>
+<a href= "{% url 'users:register' %}"> Register an account</a> to add comments on simulation algorithms
+</h4>
+{% endblock content%}

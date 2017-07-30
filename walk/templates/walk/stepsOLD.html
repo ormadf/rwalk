@@ -1,0 +1,45 @@
+<!-- return image of walk: we need to imbed image file here
+ or maybe to compute 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>steps</title>
+
+</head>
+<body>
+
+<div>
+  <!-- Don't forget the "|safe!" -->
+  <p> form to enter number of steps and type of walk</p>
+  <!--
+   <form method="post" action="{% url 'walk:steps' %}" class="form">
+  {% csrf_token %}
+   
+  
+   
+   
+     <input type="submit"  value="submit" > log in</input>
+   
+   
+   <input type ="hidden" name="next" value="{% url 'walk:index' %}" />
+  </form>
+  -->
+  
+  
+  <form action= "{% url 'walk:steps' %}" method = 'post' >
+    {% csrf_token %}
+	{{form}}
+    <input type="submit" value="Submit" />	    
+  </form>
+</div>
+<h2> {{num_of_steps}}</h2>
+<div id="sidebar">
+<h2>random walk {{curent_name}}</h2>
+<p>This is modeling of non-returning random walk.</p>
+
+</div>
+
+</body>
+</html>

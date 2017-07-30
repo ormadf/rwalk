@@ -1,0 +1,22 @@
+{% extends "walk/base.html" %}
+{% block header %}
+ <!-- <h3> <b>Algorithms: </b> <h3> -->
+{% endblock header %}  
+
+{% block content %}
+
+<ul>
+  {% for algorithm in algorithms %}
+    <li>
+	  <h4>
+	    <a href="{% url 'walk:algorithm' algorithm.id %}" > {{ algorithm }} </a> 
+	  </h4>
+	</li>
+  {% empty %}
+    <li> No algorithms have been added yet </li>
+  {% endfor %}
+</ul>
+<h4>
+  <a href="{% url 'walk:new_algorithm' %}"> Add a new algorithm: </a>
+</h4>
+{% endblock content %}  
